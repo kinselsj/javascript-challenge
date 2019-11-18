@@ -12,3 +12,20 @@ tableData.forEach((ufoSighting) => {
         cell.text(value);
     });
 });
+
+// select the button
+var button = d3.select("#filter-btn");
+
+button.on("click", function() {
+// getting input element
+    var inputElement = d3.select("#datetime");
+
+    var inputValue = inputElement.property("value")
+
+    console.log(inputValue);
+    console.log(tableData);
+
+    var filteredData = tableData.filter(tableData => tableData.date === inputValue);
+
+    console.log(filteredData);
+});
